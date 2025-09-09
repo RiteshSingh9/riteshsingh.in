@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>riteshsingh.in | Premium Web Developer & Marketing</title>
+    <link rel="shortcut icon" href="RS.png" type="image/x-icon">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Playfair Display (Serif), Manrope (Sans) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;600&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Animate on Scroll CDN -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: "Manrope", sans-serif;
+            background: #f4f6f8;
+            color: #0f172a;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: "Playfair Display", serif;
+        }
+
+        /* Modern premium color palette */
+        :root {
+            --primary: #0f172a;
+            /* Rich Navy */
+            --secondary: #3b82f6;
+            /* Bright Blue */
+            --accent: #38bdf8;
+            /* Sky Blue */
+            --highlight: #fbbf24;
+            /* Amber Gold */
+            --background: #f4f6f8;
+            /* Cool Light Gray */
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+        }
+
+        /* Glow shadow for premium buttons */
+        .glow-btn {
+            box-shadow: 0 0 15px 2px #fbbf2490;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .glow-btn:hover {
+            box-shadow: 0 0 35px 4px #fbbf2460;
+        }
+
+        /* Fade up animation */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            animation: fadeUp 1s ease forwards;
+            opacity: 0;
+        }
+
+        .fade-up-delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .fade-up-delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        /* Float animation for images */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
+            <div class="text-3xl font-playfair font-bold tracking-widest text-[#0f172a] select-none">
+                riteshsingh.in
+            </div>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-8 font-semibold text-[#334155] text-base">
+                <li>
+                    <a href="#home" class="hover:text-[#fbbf24] transition">Home</a>
+                </li>
+                <li>
+                    <a href="#services" class="hover:text-[#fbbf24] transition">Services</a>
+                </li>
+                <li>
+                    <a href="#portfolio" class="hover:text-[#fbbf24] transition">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#about" class="hover:text-[#fbbf24] transition">About</a>
+                </li>
+                <li>
+                    <a href="#contact" class="hover:text-[#fbbf24] transition">Contact</a>
+                </li>
+            </ul>
+
+            <!-- Mobile Hamburger -->
+            <button id="mobile-menu-button" aria-label="Toggle menu"
+                class="md:hidden text-[#334155] hover:text-[#fbbf24] focus:outline-none focus:ring-2 focus:ring-[#fbbf24] rounded">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white shadow-lg absolute top-full left-0 w-full px-6 py-6 border-t border-gray-200">
+            <ul class="flex flex-col space-y-6 text-[#334155] font-semibold text-lg">
+                <li>
+                    <a href="#home" class="block hover:text-[#fbbf24] transition" onclick="closeMobileMenu()">Home</a>
+                </li>
+                <li>
+                    <a href="#services" class="block hover:text-[#fbbf24] transition"
+                        onclick="closeMobileMenu()">Services</a>
+                </li>
+                <li>
+                    <a href="#portfolio" class="block hover:text-[#fbbf24] transition"
+                        onclick="closeMobileMenu()">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#about" class="block hover:text-[#fbbf24] transition" onclick="closeMobileMenu()">About</a>
+                </li>
+                <li>
+                    <a href="#contact" class="block hover:text-[#fbbf24] transition"
+                        onclick="closeMobileMenu()">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home"
+        class="flex flex-col md:flex-row items-center justify-between px-6 md:px-12 py-16 md:py-24 bg-gradient-to-tr from-[#e0e7ff] to-[#3b82f6] rounded-b-3xl max-w-7xl mx-auto mt-8 shadow-lg text-white">
+        <div class="md:w-1/2 text-center md:text-left space-y-6" data-aos="fade-right" data-aos-offset="200">
+            <h1 class="text-5xl md:text-6xl font-playfair font-extrabold leading-tight drop-shadow-lg animate-fadeup">
+                Build. Market.<br />
+                <span class="text-[#fbbf24]">Optimize.</span>
+            </h1>
+            <p class="text-lg md:text-xl font-light max-w-lg drop-shadow-lg">
+                Premium web development, digital marketing, and SEO services,<br />
+                crafted for brands that aim for excellence.
+            </p>
+            <a href="#contact"
+                class="glow-btn bg-[#fbbf24] text-[#0f172a] font-semibold py-3 px-10 rounded-full inline-block hover:bg-yellow-400 transition mt-4 shadow-lg">
+                Start Your Project
+            </a>
+        </div>
+
+        <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center" data-aos="fade-left" data-aos-offset="200">
+            <!-- <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80"
+                alt="Premium Web Development Banner" class="rounded-3xl shadow-xl float max-w-full object-cover"
+                loading="lazy" /> -->
+            <img src="./undraw_winter-designer_a6kq.svg" alt="Premium Web Development Banner"
+                class="rounded-3xl shadow-xl float max-w-full object-cover" loading="lazy" />
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 px-6 md:px-12 max-w-7xl mx-auto" data-aos="fade-up" data-aos-offset="150">
+        <h2 class="text-center text-4xl font-playfair font-extrabold text-[#0f172a] mb-10">
+            Services
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div
+                class="bg-white border border-gray-200 rounded-3xl shadow-md p-8 flex flex-col items-center space-y-6 hover:shadow-lg transition duration-300">
+                <img src="https://cdn-icons-png.flaticon.com/512/2089/2089670.png" alt="Web Dev Icon"
+                    class="w-20 h-20 object-contain" loading="lazy" />
+                <h3 class="font-playfair text-[#0f172a] text-2xl font-semibold">
+                    Web Development
+                </h3>
+                <p class="text-gray-600 text-center font-light">
+                    Custom responsive websites designed for modern brands with seamless
+                    experiences.
+                </p>
+            </div>
+            <div
+                class="bg-white border border-gray-200 rounded-3xl shadow-md p-8 flex flex-col items-center space-y-6 hover:shadow-lg transition duration-300">
+                <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="Digital Marketing Icon"
+                    class="w-20 h-20 object-contain" loading="lazy" />
+                <h3 class="font-playfair text-[#0f172a] text-2xl font-semibold">
+                    Digital Marketing
+                </h3>
+                <p class="text-gray-600 text-center font-light">
+                    Growth strategies in PPC, social, and content to boost brand
+                    engagement.
+                </p>
+            </div>
+            <div
+                class="bg-white border border-gray-200 rounded-3xl shadow-md p-8 flex flex-col items-center space-y-6 hover:shadow-lg transition duration-300">
+                <img src="https://cdn-icons-png.flaticon.com/512/862/862813.png" alt="SEO Icon"
+                    class="w-20 h-20 object-contain" loading="lazy" />
+                <h3 class="font-playfair text-[#0f172a] text-2xl font-semibold">
+                    SEO Services
+                </h3>
+                <p class="text-gray-600 text-center font-light">
+                    Technical and on-page SEO to maximize organic reach and rankings.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 px-6 md:px-12 max-w-7xl mx-auto bg-white rounded-3xl shadow-md mt-12"
+        data-aos="fade-up" data-aos-offset="150">
+        <h2 class="text-4xl font-playfair font-extrabold text-center text-[#0f172a] mb-14">
+            Portfolio
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div class="rounded-xl shadow-lg overflow-hidden group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80"
+                    alt="Project 1"
+                    class="object-cover w-full h-64 transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy" />
+                <div class="p-6 bg-gray-50">
+                    <h3 class="text-xl font-playfair text-[#0f172a] mb-2">
+                        Modern E-Commerce
+                    </h3>
+                    <p class="font-light text-gray-600">
+                        Sleek, fast, and conversion-optimized online store.
+                    </p>
+                </div>
+            </div>
+            <div class="rounded-xl shadow-lg overflow-hidden group cursor-pointer">
+                <img src="./graycrafthive.JPG"
+                    alt="Project 2"
+                    class="object-cover w-full h-64 transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy" />
+                <div class="p-6 bg-gray-50">
+                    <h3 class="text-xl font-playfair text-[#0f172a] mb-2">
+                        Digital Agency Landing Page
+                    </h3>
+                    <p class="font-light text-gray-600">
+                        Clean, compelling UI driving signups and conversions.
+                    </p>
+                </div>
+            </div>
+            <div class="rounded-xl shadow-lg overflow-hidden group cursor-pointer">
+                <img src="./nutridonltd.JPG"
+                    alt="Project 3"
+                    class="object-cover w-full h-64 transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy" />
+                <div class="p-6 bg-gray-50">
+                    <h3 class="text-xl font-playfair text-[#0f172a] mb-2">
+                        Health & Wellness website
+                    </h3>
+                    <p class="font-light text-gray-600">
+                        Robust website & SEO for lasting presence and organic growth.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16 space-y-6 max-w-4xl mx-auto">
+            <blockquote class="text-center italic text-gray-600 font-light">
+                &ldquo;Ritesh crafted a website that perfectly captures our brand’s
+                luxury feel. Our traffic and sales have soared!&rdquo;
+                <footer class="mt-2 font-semibold text-[#0f172a]">
+                    — Prof. SK Chauhan, (Allahabad University) 
+                </footer>
+            </blockquote>
+            <blockquote class="text-center italic text-gray-600 font-light">
+                &ldquo;His marketing & SEO strategies are game-changing. Highly
+                professional and results-driven.&rdquo;
+                <footer class="mt-2 font-semibold text-[#0f172a]">
+                    — CA Shashank Shrivastava, (CA Firm)
+                </footer>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about"
+        class="py-16 px-6 md:px-12 max-w-7xl mx-auto mt-20 flex flex-col md:flex-row items-center gap-12"
+        data-aos="fade-up" data-aos-offset="150">
+        <div class="md:w-1/2" data-aos="fade-right">
+            <img src="./ritesh.png"
+                alt="Ritesh Singh" class="rounded-3xl shadow-lg object-cover w-full max-w-md mx-auto md:mx-0"
+                loading="lazy" />
+        </div>
+        <div class="md:w-1/2" data-aos="fade-left">
+            <h2 class="text-4xl font-playfair font-extrabold text-[#0f172a] mb-6">
+                About Me
+            </h2>
+            <p class="font-light text-gray-600 mb-4 leading-relaxed max-w-lg">
+                I’m
+                <strong class="text-[#3b82f6] font-semibold">Ritesh Singh</strong>, a
+                modern web developer, marketer, and SEO strategist dedicated to
+                building websites and campaigns for brands that want to stand out.
+            </p>
+            <ul class="list-disc ml-6 font-light text-gray-600 space-y-2 max-w-md">
+                <li>3+ years experience crafting high-end web solutions</li>
+                <li>Google and HubSpot certified professional</li>
+                <li>Delivering elegant design with measurable results</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <!-- <section id="contact" class="bg-white py-16 px-6 md:px-12 mt-20 rounded-3xl shadow-lg max-w-7xl mx-auto"
+        data-aos="fade-up" data-aos-offset="150">
+        <h2 class="text-4xl font-playfair font-extrabold text-[#0f172a] mb-12 text-center">
+            Contact Me
+        </h2>
+
+        <form class="max-w-lg mx-auto space-y-8">
+            <div class="relative z-0 w-full group">
+                <input type="text" name="name" id="name"
+                    class="block py-4 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#3b82f6] peer"
+                    placeholder=" " required />
+                <label for="name"
+                    class="absolute text-gray-500 text-lg duration-300 transform -translate-y-6 scale-75 top-4 left-0 origin-[0] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-[#3b82f6]">Your
+                    Name</label>
+            </div>
+
+            <div class="relative z-0 w-full group">
+                <input type="email" name="email" id="email"
+                    class="block py-4 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#3b82f6] peer"
+                    placeholder=" " required />
+                <label for="email"
+                    class="absolute text-gray-500 text-lg duration-300 transform -translate-y-6 scale-75 top-4 left-0 origin-[0] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-[#3b82f6]">Your
+                    Email</label>
+            </div>
+
+            <div class="relative z-0 w-full group">
+                <textarea rows="5" name="message" id="message"
+                    class="block py-4 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none resize-none focus:outline-none focus:ring-0 focus:border-[#3b82f6] peer"
+                    placeholder=" " required></textarea>
+                <label for="message"
+                    class="absolute text-gray-500 text-lg duration-300 transform -translate-y-6 scale-75 top-4 left-0 origin-[0] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-[#3b82f6]">Your
+                    Message</label>
+            </div>
+
+            <button type="submit"
+                class="w-full py-4 rounded-full bg-gradient-to-r from-[#3b82f6] to-[#2563eb] font-semibold text-white hover:brightness-110 transition glow-btn shadow-lg text-lg">
+                Send Message
+            </button>
+        </form>
+
+        <p class="mt-8 text-center text-sm text-gray-400 italic">
+            All messages are private & secure.
+        </p>
+    </section> -->
+
+    <!-- Redesigned Wider Contact Section -->
+
+    <!-- Wider Contact Section -->
+    <!-- Wider Contact Section with slimmer submit button -->
+    <section id="contact" class="bg-[#f9fafb] py-20 px-6 md:px-12 mt-20 rounded-3xl shadow-lg max-w-full mx-auto"
+        data-aos="fade-up" data-aos-offset="150">
+        <h2 class="text-4xl font-playfair font-extrabold text-[#0f172a] mb-16 text-center">Contact Me</h2>
+
+        <div class="max-w-7xl mx-auto px-6">
+            <form action="https://formspree.io/f/mgvldvgr" method="POST"
+                class="max-w-5xl mx-auto space-y-10 px-10 py-10 bg-white rounded-2xl shadow-xl">
+                <div class="relative z-0 w-full group">
+                    <input type="text" name="name" id="name"
+                        class="block py-4 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#3b82f6] peer"
+                        placeholder=" " required />
+                    <label for="name"
+                        class="absolute text-gray-500 text-lg duration-300 transform -translate-y-6 scale-75 top-4 left-0 origin-[0] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-[#3b82f6]">Your
+                        Name</label>
+                </div>
+
+                <div class="relative z-0 w-full group">
+                    <input type="email" name="email" id="email"
+                        class="block py-4 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#3b82f6] peer"
+                        placeholder=" " required />
+                    <label for="email"
+                        class="absolute text-gray-500 text-lg duration-300 transform -translate-y-6 scale-75 top-4 left-0 origin-[0] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-[#3b82f6]">Your
+                        Email</label>
+                </div>
+
+                <div class="relative z-0 w-full group">
+                    <textarea rows="5" name="message" id="message"
+                        class="block py-4 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none resize-none focus:outline-none focus:ring-0 focus:border-[#3b82f6] peer"
+                        placeholder=" " required></textarea>
+                    <label for="message"
+                        class="absolute text-gray-500 text-lg duration-300 transform -translate-y-6 scale-75 top-4 left-0 origin-[0] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-[#3b82f6]">Your
+                        Message</label>
+                </div>
+
+                <button type="submit"
+                    class="w-full py-3 rounded-full bg-gradient-to-r from-[#3b82f6] to-[#2563eb] font-semibold text-white hover:brightness-110 transition glow-btn shadow-lg text-lg">
+                    Send Message
+                </button>
+            </form>
+        </div>
+
+        <p class="mt-12 text-center text-sm text-gray-400 italic">All messages are private & secure.</p>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-[#0f172a] text-white py-8 mt-20 text-center font-light text-sm">
+        <p>
+            Email: info@riteshsingh.in | Phone: +91-959488252 | Office: Lucknow,
+            India
+        </p>
+        <p class="mt-2">
+            &copy; 2025 riteshsingh.in | Premium Web Development & Marketing
+        </p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 900, easing: "ease-out-cubic" });
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+
+        // Close mobile menu on link click
+        function closeMobileMenu() {
+            mobileMenu.classList.add("hidden");
+        }
+    </script>
+</body>
+
+</html>
